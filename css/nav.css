@@ -1,0 +1,99 @@
+/* Nav Section Styles */
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 500;
+}
+
+.sticky-bg {
+  width: 100%;
+  backdrop-filter: blur(20px);
+}
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 11;
+}
+
+nav a {
+  text-decoration: none;
+  color: #e7e7e7;
+  transition: 0.5s;
+}
+
+nav a:hover {
+  color: white;
+  font-weight: 500;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 2% 6%;
+}
+
+.nav-links ul li {
+  list-style: none;
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.nav-links ul li a {
+  text-decoration: none;
+  color: #ffffff;
+  transition: 0.5s;
+}
+
+.nav-links ul li a:hover {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+nav .fa {
+  display: none;
+}
+
+/* Adding Responsivess to Nav Section */
+
+@media (max-width: 700px) {
+  nav .fa {
+    display: block;
+    color: #fff;
+    margin: 10px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  
+  .sticky-bg {
+    backdrop-filter: blur(20px);
+  }
+  
+  .nav-links .home-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-links ul li {
+    display: block;
+    text-align: left;
+    padding: 5px 50px;
+  }
+
+  #nav-links-sub {
+    left: -200px;
+    text-align: right;
+    margin-top: 70px;
+    position: absolute;
+    height: 100vh;
+    width: 30%;
+    background: rgba(255, 81, 0, 0);
+    backdrop-filter: blur(10px);
+    transition: 1s;
+  }
+}

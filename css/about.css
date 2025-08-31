@@ -1,0 +1,54 @@
+/* About Us Section styles */
+
+#about-us {
+  min-height: 100vh;
+  max-width: 100vw;
+  background-color: #000000;
+  min-height: 100vh;
+  background-image: url(assets/images/backdrop.png);
+  background-position: center;
+  background-size: cover;
+}
+
+#about-us p {
+  color: white;
+}
+
+.about-us-container {
+  text-align: left;
+  width: 80%;
+  margin: auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.about-us-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.about-us-col {
+  padding: 10px;
+  flex-basis: 31%;
+}
+
+.about-us-col h3 {
+  color: white;
+  margin-bottom: 10px;
+}
+/* Adding responsiveness to About Us Section */
+
+@media (max-width: 700px) {
+  #about-us {
+    padding: 10%;
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  .about-us-row {
+    flex-direction: column;
+  }
+}
