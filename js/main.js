@@ -18,7 +18,7 @@ async function init() {
     loadSection("include-projects", "pages/projects.html"),
     loadSection("include-members", "pages/members.html"),
     loadSection("include-contact", "pages/contact.html"),
-    loadSection("include-footer", "pages/footer.html"),
+    // loadSection("include-footer", "pages/footer.html"),
   ]);
 
   // After HTML is injected, bind scripts that depend on DOM
@@ -97,16 +97,3 @@ function toggleMenu() {
     document.body.style.overflowY = "visible";
   }
 }
-
-//adding parallax effect to the home section title
-//learned this from Youtube Tutorial - by Online Tutorials - https://www.youtube.com/watch?v=1wfeqDyMUx4
-
-let titleOne = document.getElementById("title-one");
-let titleTwo = document.getElementById("title-two");
-
-// window.addEventListener("scroll", function () {
-//   let value = window.scrollY;
-
-//   titleOne.style.right = value * 0.5 + "px";
-//   titleTwo.style.left = value * 0.5 + "px";
-// });
