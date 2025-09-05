@@ -22,6 +22,21 @@ async function init() {
           ? `<span class="author-highlight">${name}</span>`
           : name;
 
+      const pickTitleHref = (p) => {
+        if (p.titleHref) return p.titleHref;
+        const links = Array.isArray(p.links) ? p.links : [];
+        const byLabel = (label) =>
+          links.find(
+            (l) => l && typeof l.label === "string" && l.label.toLowerCase() === label && l.href
+          )?.href;
+        return (
+          byLabel("project") ||
+          byLabel("pdf") ||
+          links.find((l) => l && l.href)?.href ||
+          null
+        );
+      };
+
       const yearBlocks = (data.years || [])
         .map((y) => {
           const items = (y.items || [])
@@ -29,6 +44,10 @@ async function init() {
               const authors = (p.authors || [])
                 .map((a) => highlight(a))
                 .join(", ");
+              const titleHref = pickTitleHref(p);
+              const titleHTML = titleHref
+                ? `<a class="pub-title-link" href="${titleHref}" target="_blank" rel="noopener">${p.title || ""}</a>`
+                : (p.title || "");
               const links = (p.links || [])
                 .map((l) => {
                   if (!l || !l.label) return "";
@@ -40,7 +59,7 @@ async function init() {
               return `
                 <article class="pub-item">
                   <div class="pub-venue">${p.venue || ""}</div>
-                  <h4 class="pub-title">${p.title || ""}</h4>
+                  <h4 class="pub-title">${titleHTML}</h4>
                   <p class="pub-authors">${authors}</p>
                   <div class="pub-links">${links}</div>
                 </article>`;
