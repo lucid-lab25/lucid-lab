@@ -1,85 +1,65 @@
 <section id="publications">
   <div class="pubs-container">
     <h2>Publications</h2>
-
-    <!-- 2025 -->
-    <div class="pub-year reveal">
-      <h3 class="pub-year-title">2025</h3>
-      <div class="pub-grid">
-        <article class="pub-item">
-          <div class="pub-venue">
-            Proceedings of the 2025 ACM International Workshop on Security and
-            Privacy Analytics
-          </div>
-          <h4 class="pub-title">
-            Enhancing Security Insights with KnowGen-RAG: Combining Knowledge
-            Graphs, LLMs, and Multimodal Interpretability
-          </h4>
-          <p class="pub-authors">
-            Arnav Nishith Sharma, Khandakar Ashrafi Akbar, Bhavani
-            Thuraisingham, Latifur Khan
-          </p>
-          <div class="pub-links">
-            <a
-              class="pub-badge"
-              href="https://dl.acm.org/doi/pdf/10.1145/3716815.3729012?download=true"
-              aria-label="PDF"
-              >PDF</a
-            >
-            <a
-              class="pub-badge"
-              href="https://khandakar-ashrafi-akbar.github.io/about-me/publication/iwspa/"
-              aria-label="Project page"
-              >Project</a
-            >
-            <!-- <a class="pub-badge" href="#" aria-label="Code repository">Code</a> -->
-            <!-- <a class="pub-badge alt" href="#" aria-label="BibTeX">BibTeX</a> -->
-          </div>
-        </article>
-
-        <article class="pub-item">
-          <div class="pub-venue">
-            International Conference on Artificial Intelligence, Computer, Data
-            Sciences and Applications
-          </div>
-          <h4 class="pub-title">
-            Streamlining Research Complexities for AI Agents: Charting Pathways
-            to Innovative Idea Generation
-          </h4>
-          <p class="pub-authors">
-            Jinghui Guo, Khandakar Ashrafi Akbar, Latifur Khan, Bhavani
-            Thuraisingham, Saquib Irtiza
-          </p>
-          <div class="pub-links">
-            <a class="pub-badge" href="">PDF</a>
-            <a class="pub-badge" href="">Slides</a>
-            <a class="pub-badge" href="">Code</a>
-          </div>
-        </article>
-      </div>
-    </div>
-
-    <!-- 2024 -->
-    <div class="pub-year reveal">
-      <h3 class="pub-year-title">2024</h3>
-      <div class="pub-grid">
-        <article class="pub-item">
-          <div class="pub-venue">In TRB Annual Meeting 2025, National Academics</div>
-          <h4 class="pub-title">
-            Data Security & Privacy Regulation in the U.S.: A 50-State
-            Legislative Survey
-          </h4>
-          <p class="pub-authors">
-            Trayce Hockstad, Mizanur Rahman, Mashrur Chowdhury, Khandakar
-            Ashrafi Akbar, Md Nahiyan Uddin, Latifur Khan
-          </p>
-          <div class="pub-links">
-            <a class="pub-badge" href="#">PDF</a>
-            <!-- <a class="pub-badge" href="#">Talk</a>
-            <a class="pub-badge alt" href="#">BibTeX</a> -->
-          </div>
-        </article>
-      </div>
-    </div>
+    <div id="pubs-root"></div>
   </div>
+  <script>
+    // This script defines a render hook for main.js
+    window.__renderPublications = async function () {
+      const root = document.getElementById("pubs-root");
+      if (!root) return;
+      try {
+        const resp = await fetch("data/publications.json");
+        if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+        const data = await resp.json();
+        const highlight = (name) =>
+          name === data.highlightAuthor
+            ? `<span class="author-highlight">${name}</span>`
+            : name;
+
+        // Build markup
+        const yearBlocks = (data.years || [])
+          .map((y) => {
+            const items = (y.items || [])
+              .map((p) => {
+                const authors = (p.authors || [])
+                  .map((a) => highlight(a))
+                  .join(", ");
+                const links = (p.links || [])
+                  .map((l) => {
+                    if (!l || !l.label) return "";
+                    const href = l.href || "#";
+                    const cls = l.alt ? "pub-badge alt" : "pub-badge";
+                    return `<a class="${cls}" href="${href}">${l.label}</a>`;
+                  })
+                  .join("\n");
+                return `
+                  <article class="pub-item">
+                    <div class="pub-venue">${p.venue || ""}</div>
+                    <h4 class="pub-title">${p.title || ""}</h4>
+                    <p class="pub-authors">${authors}</p>
+                    <div class="pub-links">${links}</div>
+                  </article>`;
+              })
+              .join("\n");
+
+            return `
+              <div class="pub-year reveal">
+                <h3 class="pub-year-title">${y.year}</h3>
+                <div class="pub-grid">${items}</div>
+              </div>`;
+          })
+          .join("\n");
+
+        root.innerHTML = yearBlocks;
+        // Re-run reveal to apply animations to new nodes
+        if (typeof window.reveal === "function") {
+          window.reveal();
+        }
+      } catch (e) {
+        console.error("Failed to render publications:", e);
+        root.innerHTML = "<p style=\"color:#999\">Failed to load publications.</p>";
+      }
+    };
+  </script>
 </section>

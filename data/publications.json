@@ -1,0 +1,265 @@
+{
+  "highlightAuthor": "Khandakar Ashrafi Akbar",
+  "years": [
+    {
+      "year": 2025,
+      "items": [
+        {
+          "venue": "Proceedings of the 2025 ACM International Workshop on Security and Privacy Analytics",
+          "title": "Enhancing Security Insights with KnowGen-RAG: Combining Knowledge Graphs, LLMs, and Multimodal Interpretability",
+          "authors": [
+            "Arnav Nishith Sharma",
+            "Khandakar Ashrafi Akbar",
+            "Bhavani Thuraisingham",
+            "Latifur Khan"
+          ],
+          "links": [
+            {
+              "label": "See more",
+              "href": "https://dl.acm.org/doi/abs/10.1145/3716815.3729012"
+            }
+          ]
+        },
+        {
+          "venue": "International Conference on Artificial Intelligence, Computer, Data Sciences and Applications",
+          "title": "Streamlining Research Complexities for AI Agents: Charting Pathways to Innovative Idea Generation",
+          "authors": [
+            "Jinghui Guo",
+            "Khandakar Ashrafi Akbar",
+            "Latifur Khan",
+            "Bhavani Thuraisingham",
+            "Saquib Irtiza"
+          ],
+          "links": [
+            { "label": "See more", "href": "" }
+          ]
+        },
+        {
+          "venue": "arXiv preprint arXiv:2508.05852",
+          "title": "VISTA: Vision-Language Imitation of Situational Thinking and Attention for Human-Like Driver Focus in Dynamic Environments",
+          "authors": [
+            "Kaiser Hamid",
+            "Khandakar Ashrafi Akbar",
+            "Nade Liang"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://arxiv.org/abs/2508.05852" }
+          ]
+        },
+        {
+          "venue": "arXiv preprint arXiv:2508.05852",
+          "title": "Transportation Cyber Incident Awareness through Generative AI-Based Incident Analysis and Retrieval-Augmented Question-Answering Systems",
+          "authors": [
+            "Ostonya Thomas", 
+            "Muhaimin Bin Munir", 
+            "Jean-Michel Tine", 
+            "Mizanur Rahman", 
+            "Yuchen Cai", 
+            "Khandakar Ashrafi Akbar", 
+            "Md Nahiyan Uddin", 
+            "Latifur Khan", 
+            "Trayce Hockstad", 
+            "Mashrur Chowdhury"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://arxiv.org/abs/2508.02523" }
+          ]
+        },
+        {
+          "venue": "Proceedings of the 2025 ACM Workshop on Secure and Trustworthy Cyber-physical Systems",
+          "title": "Trustworthy and Secure Artificial Intelligence for Transportation Systems Security and Resiliency",
+          "authors": [
+            "Bhavani Thuraisingham", 
+            "Khandakar Ashrafi Akbar"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://dl.acm.org/doi/abs/10.1145/3716816.3727975" }
+          ]
+        },
+        {
+          "venue": "arXiv preprint arXiv:2505.18426",
+          "title": "Retrieval Augmented Generation-based Large Language Models for Bridging Transportation Cybersecurity Legal Knowledge Gaps",
+          "authors": [
+            "Khandakar Ashrafi Akbar", 
+            "Md Nahiyan Uddin", 
+            "Latifur Khan", 
+            "Trayce Hockstad", 
+            "Mizanur Rahman", 
+            "Mashrur Chowdhury", 
+            "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://arxiv.org/abs/2505.18426" }
+          ]
+        },
+        {
+          "venue": "In TRB Annual Meeting 2025, National Academics",
+          "title": "Data Security & Privacy Regulation in the U.S.: A 50-State Legislative Survey",
+          "authors": [
+            "Trayce Hockstad",
+            "Mizanur Rahman",
+            "Mashrur Chowdhury",
+            "Khandakar Ashrafi Akbar",
+            "Md Nahiyan Uddin",
+            "Latifur Khan"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://journals.sagepub.com/doi/abs/10.1177/03611981251342785" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2024,
+      "items": [
+        {
+          "venue": "IEEE TPS ISA",
+          "title": "LLM-Sentry: A Model-Agnostic Human-in-the-Loop Framework for Securing Large Language Models",
+          "authors": [
+            "Saquib Irtiza",
+            "Khandakar Ashrafi Akbar",
+            "Arowa Yasmeen",
+            "Latifur Khan",
+            "Ovidiu Daescu",
+            "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://ieeexplore.ieee.org/abstract/document/10835584/" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2023,
+      "items": [
+        {
+          "venue": "International Conference on Information Systems Security",
+          "title": "The Design and Application of a Unified Ontology for Cyber Security",
+          "authors": [
+            "Khandakar Ashrafi Akbar", 
+            "Fariha Ishrat Rahman", 
+            "Anoop Singhal", 
+            "Latifur Khan", 
+            "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://link.springer.com/chapter/10.1007/978-3-031-49099-6_2" }
+          ]
+        },
+        {
+          "venue": "Proceedings of the Thirteenth ACM Conference on Data and Application Security and Privacy",
+          "title": "The design of an ontology for ATT&CK and its application to cybersecurity",
+          "authors": [
+            "Khandakar Ashrafi Akbar", 
+            "Sadaf Md Halim", 
+            "Anoop Singhal", 
+            "Basel Abdeen", 
+            "Latifur Khan", 
+            "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://dl.acm.org/doi/abs/10.1145/3577923.3585051" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2022,
+      "items": [
+        {
+          "venue": "IEEE Transactions on Dependable and Secure Computing",
+          "title": "Advanced persistent threat detection using data provenance and metric learning",
+          "authors": [
+            "Khandakar Ashrafi Akbar", 
+            "Yigong Wang", 
+            "Gbadebo Ayoade", 
+            "Yang Gao", 
+            "Anoop Singhal", 
+            "Latifur Khan", 
+            "Bhavani Thuraisingham", 
+            "Kangkook Jee"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://ieeexplore.ieee.org/abstract/document/9947295/" }
+          ]
+        },
+        {
+          "venue": "IFIP Annual Conference on Data and Applications Security and Privacy",
+          "title": "Knowledge mining in cybersecurity: From attack to defense",
+          "authors": [
+            "Khandakar Ashrafi Akbar", 
+            "Sadaf Md Halim", 
+            "Yibo Hu", 
+            "Anoop Singhal", 
+            "Latifur Khan", 
+            "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://link.springer.com/chapter/10.1007/978-3-031-10684-2_7" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2021,
+      "items": [
+        {
+          "venue": "International Conference on Information Systems Security",
+          "title": "Identifying tactics of advanced persistent threats with limited attack traces",
+          "authors": [
+            "Khandakar Ashrafi Akbar", "Yigong Wang", "Md Shihabul Islam", "Anoop Singhal", "Latifur Khan", "Bhavani Thuraisingham"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://link.springer.com/chapter/10.1007/978-3-030-92571-0_1" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2020,
+      "items": [
+        {
+          "venue": "2020 IEEE conference on communications and network security (CNS)",
+          "title": "Evolving advanced persistent threat detection using provenance graph and metric learning",
+          "authors": [
+            "Gbadebo Ayoade", "Khandakar Ashrafi Akbar", "Pracheta Sahoo", "Yang Gao", "Anmol Agarwal", "Kangkook Jee", "Latifur Khan", "Anoop Singhal"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://ieeexplore.ieee.org/abstract/document/9162264/" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2019,
+      "items": [
+        {
+          "venue": "Towards privacy-preserving authenticated disease risk queries",
+          "title": "Evolving advanced persistent threat detection using provenance graph and metric learning",
+          "authors": [
+            "Nusrat Jahan Mozumder", "Maitraye Das", "Tanzima Hashem", "Sharmin Afrose", "Khandakar Ashrafi Akbar"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://www.jstage.jst.go.jp/article/ipsjjip/27/0/27_624/_article/-char/ja/" }
+          ]
+        }
+      ]
+    },
+    {
+      "year": 2018,
+      "items": [
+        {
+          "venue": "T2018 IEEE 42nd Annual Computer Software and Applications Conference (COMPSAC)",
+          "title": "A novel secret sharing approach for privacy-preserving authenticated disease risk queries in genomic databases",
+          "authors": [
+            "Maitraye Das", "Nusrat Jahan Mozumder", "Sharmin Afrose", "Khandakar Ashrafi Akbar", "Tanzima Hashem"
+          ],
+          "links": [
+            { "label": "See more", "href": "https://ieeexplore.ieee.org/abstract/document/8377722/" }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
