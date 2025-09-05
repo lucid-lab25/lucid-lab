@@ -10,6 +10,60 @@ async function loadSection(targetId, file) {
 }
 
 async function init() {
+  async function renderPublications() {
+    const root = document.getElementById("pubs-root");
+    if (!root) return;
+    try {
+      const resp = await fetch("data/publications.json");
+      if (!resp.ok) throw new Error(`HTTP ${resp.status}`);
+      const data = await resp.json();
+      const highlight = (name) =>
+        name === data.highlightAuthor
+          ? `<span class="author-highlight">${name}</span>`
+          : name;
+
+      const yearBlocks = (data.years || [])
+        .map((y) => {
+          const items = (y.items || [])
+            .map((p) => {
+              const authors = (p.authors || [])
+                .map((a) => highlight(a))
+                .join(", ");
+              const links = (p.links || [])
+                .map((l) => {
+                  if (!l || !l.label) return "";
+                  const href = l.href || "#";
+                  const cls = l.alt ? "pub-badge alt" : "pub-badge";
+                  return `<a class="${cls}" href="${href}">${l.label}</a>`;
+                })
+                .join("\n");
+              return `
+                <article class="pub-item">
+                  <div class="pub-venue">${p.venue || ""}</div>
+                  <h4 class="pub-title">${p.title || ""}</h4>
+                  <p class="pub-authors">${authors}</p>
+                  <div class="pub-links">${links}</div>
+                </article>`;
+            })
+            .join("\n");
+
+          return `
+            <div class="pub-year reveal">
+              <h3 class="pub-year-title">${y.year}</h3>
+              <div class="pub-grid">${items}</div>
+            </div>`;
+        })
+        .join("\n");
+
+      root.innerHTML = yearBlocks;
+      if (typeof window.reveal === "function") {
+        window.reveal();
+      }
+    } catch (e) {
+      console.error("Failed to render publications:", e);
+      root.innerHTML = "<p style=\"color:#999\">Failed to load publications.</p>";
+    }
+  }
   await Promise.all([
     loadSection("include-header", "pages/header.html"),
     loadSection("include-home", "pages/home.html"),
@@ -20,6 +74,9 @@ async function init() {
     loadSection("include-contact", "pages/contact.html"),
     // loadSection("include-footer", "pages/footer.html"),
   ]);
+
+  // Render publications from JSON after the section HTML is injected
+  await renderPublications();
 
   // After HTML is injected, bind scripts that depend on DOM
   // --- Reveal on scroll

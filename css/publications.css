@@ -67,6 +67,12 @@
   color: #333;
 }
 
+/* Highlight a specific author in the list */
+.pub-authors .author-highlight {
+  color: #070856;
+  font-weight: 700;
+}
+
 .pub-links {
   display: flex;
   flex-wrap: wrap;
