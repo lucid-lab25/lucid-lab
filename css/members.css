@@ -44,6 +44,7 @@
   display: flex;
   align-items: flex-start;
   gap: 14px;
+  position: relative;
 }
 
 .grid-item:hover {
@@ -77,6 +78,55 @@
 .member-links a.scholar { background: #fff; border: 1px solid #e5e7eb; }
 .member-links a.github { background: #000; color: #fff; }
 .member-links a.linkedin { background: #0a66c2; color: #fff; }
+
+/* Expandable details */
+.member-toggle {
+  margin: 6px 0 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  background: #fff;
+  color: #111;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+}
+.member-toggle:hover { background: #f9fafb; }
+
+.member-extra {
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.25s ease, opacity 0.25s ease, margin-top 0.25s ease;
+  margin-top: 0;
+}
+.grid-item.expanded .member-extra {
+  max-height: 400px; /* enough for lists */
+  opacity: 1;
+  margin-top: 8px;
+}
+
+.member-extra h4 {
+  font-size: 14px;
+  color: #000;
+  margin: 10px 0 6px;
+}
+.member-list { padding-left: 18px; margin: 0 0 8px; }
+.member-list li { color: #222; margin: 2px 0; }
+.member-tags { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 20px 6px; padding: 0; list-style: none; }
+.member-tags li {
+  background: #e5e7eb;
+  color: #111;
+  border-radius: 999px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* Make card clickable but avoid interfering with links */
+.grid-item.expandable { cursor: pointer; }
+.grid-item.expandable .member-links a,
+.grid-item.expandable .member-toggle { cursor: pointer; }
 
 @media (max-width: 700px) {
   .members-grid-wrapper {

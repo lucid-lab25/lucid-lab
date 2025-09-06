@@ -125,6 +125,51 @@ async function init() {
   // Render publications from JSON after the section HTML is injected
   await renderPublications();
 
+  // Bind expandable member cards after members section is injected
+  (function bindMemberCards() {
+    const cards = document.querySelectorAll('#our-members .grid-item');
+    if (!cards.length) return;
+    cards.forEach((card) => {
+      card.classList.add('expandable');
+      if (!card.hasAttribute('tabindex')) card.setAttribute('tabindex', '0');
+      const extra = card.querySelector('.member-extra');
+      const toggleBtn = card.querySelector('.member-toggle');
+      const setExpanded = (expanded) => {
+        if (expanded) {
+          card.classList.add('expanded');
+        } else {
+          card.classList.remove('expanded');
+        }
+        if (toggleBtn) toggleBtn.setAttribute('aria-expanded', String(expanded));
+        if (extra) extra.setAttribute('aria-hidden', String(!expanded));
+        if (toggleBtn) toggleBtn.textContent = expanded ? 'Collapse' : 'More';
+      };
+      const toggle = () => setExpanded(!card.classList.contains('expanded'));
+
+      // Entire card toggles unless clicking an interactive element
+      card.addEventListener('click', (e) => {
+        const target = e.target;
+        if (target.closest('.member-links a')) return; // ignore social links
+        if (target.closest('.member-toggle')) return;  // handled below
+        toggle();
+      });
+      card.addEventListener('keydown', (e) => {
+        if ((e.key === 'Enter' || e.key === ' ') && !e.target.closest('a')) {
+          e.preventDefault();
+          toggle();
+        }
+      });
+      if (toggleBtn) {
+        toggleBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          toggle();
+        });
+      }
+      // initialize hidden state
+      setExpanded(false);
+    });
+  })();
+
   // After HTML is injected, bind scripts that depend on DOM
   // --- Reveal on scroll
   window.addEventListener("scroll", reveal);
