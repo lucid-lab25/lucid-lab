@@ -94,6 +94,34 @@ async function init() {
     // loadSection("include-footer", "pages/footer.html"),
   ]);
 
+  // Set current date only for the hiring news item after news section is injected
+  (function setHiringNewsDate() {
+    const badges = document.querySelectorAll(".news-badge.is-hiring");
+    if (!badges.length) return;
+    const now = new Date();
+    const day = now.getDate().toString();
+    const monthShort = now.toLocaleString("en-US", { month: "short" });
+    const year = now.getFullYear().toString();
+    const monthLong = now.toLocaleString("en-US", { month: "long" });
+
+    badges.forEach((badge) => {
+      const meta = badge.closest(".news-meta");
+      if (!meta) return;
+      const c = meta.querySelector(".news-date");
+      if (!c) return;
+      const d = c.querySelector(".day");
+      const m = c.querySelector(".month");
+      const y = c.querySelector(".year");
+      if (d) d.textContent = day;
+      if (m) m.textContent = monthShort;
+      if (y) y.textContent = year;
+      c.setAttribute(
+        "aria-label",
+        `Published on ${monthLong} ${day}, ${year}`
+      );
+    });
+  })();
+
   // Render publications from JSON after the section HTML is injected
   await renderPublications();
 

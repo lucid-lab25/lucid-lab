@@ -1,7 +1,10 @@
 /* General Styles */
 
 :root {
-  --card_bg: #b8c1d1
+  --card_bg: #b8c1d1;
+  --text_color: #f4b810;
+  --yellow_bg: #fb0;
+  --orange_bg: #fc8a05;
 }
 
 * {
