@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-  background-image: url('/assets/towson/towson_1.jpg');
+  background-image: url('/assets/images/towson_1.jpg');
   background-repeat: no-repeat;
   background-size: cover;
 }
