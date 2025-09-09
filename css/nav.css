@@ -11,6 +11,7 @@ header {
 .sticky-bg {
   width: 100%;
   backdrop-filter: blur(20px);
+  background-color: #23252f63;
 }
 
 nav {
@@ -71,6 +72,7 @@ nav .fa {
   
   .sticky-bg {
     backdrop-filter: blur(20px);
+    background-color: #23252f63;
   }
   
   .nav-links .home-link {
