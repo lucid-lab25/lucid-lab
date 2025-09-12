@@ -12,11 +12,7 @@
   align-items: center;
   justify-content: center;
   overflow: hidden;
-<<<<<<< HEAD
   background-image: url("../assets/images/towson_1.jpg");
-=======
-  background-image: url('/assets/images/towson_1.jpg');
->>>>>>> 28bbe36 (add images)
   background-repeat: no-repeat;
   background-size: cover;
 }
