@@ -108,6 +108,19 @@
 
 .proj-link.alt { background: #111; color: #fff; }
 
+.proj-link.is-disabled {
+  background: #9ca3af;
+  color: #1f2933;
+  pointer-events: none;
+  cursor: default;
+  opacity: 0.75;
+}
+
+.proj-link.is-disabled:hover {
+  transform: none;
+  opacity: 0.75;
+}
+
 .proj-link:hover {
   transform: translateY(-2px);
   opacity: 0.95;
@@ -119,4 +132,3 @@
     padding: 60px 0;
   }
 }
-
